@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  cursor: none;
+}
+
+/* Custom Scroll bar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #7711dd;
+  border-radius: 10px;
+  border: 2px solid #f0f0f0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #5a0fad;
+}
+
+/* Custom cursor */
+.cursor-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #000;
+  z-index: 999;
+  transition: border 0.3s;
+}
+.cursor {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #000;
+  z-index: 999;
+  transition: background-color 0.3s;
+}
+
+.cursor,
+.cursor-circle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  pointer-events: none;
+  z-index: 999;
+}
+
+body {
+  font-family: "Permanent Marker", serif;
+  overflow-x: hidden;
+}
+
+h1::selection,
+p::selection {
+  background-color: #39ff14;
+  color: #fff;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+input {
+  border: none;
+  outline: none;
+}
+input::placeholder {
+  font-family: "Montserrat", sans-serif;
+  color: #000;
+}
+
+@layer utilities {
+  .btn_download {
+    @apply w-[189px] h-[52px] border border-black bg-white text-black rounded-2xl shadow-xl shadow-black;
+  }
+  .btn_nav {
+    @apply w-[49px] h-[49px] rounded-full border border-black bg-white shadow-xl shadow-black text-black text-[24px];
+  }
+  .btn_common {
+    @apply w-[189px] h-[52px] border border-black rounded-2xl shadow-xl shadow-black;
+  }
+  .btn_email {
+    @apply w-full h-[52px] border border-black rounded-2xl shadow-xl shadow-black;
+  }
+}
+
+p {
+  font-family: "Montserrat", sans-serif;
+}
+button {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
+
+.card {
+  width: 340px;
+  height: 183px;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.swiper-pagination-bullet {
+  background-color: #fff;
+  position: relative;
+  top: 30px !important;
+  width: 15px !important;
+  height: 15px !important;
+  background-color: transparent !important;
+  border: 2px solid #000;
+  opacity: 1;
+  margin: 0 6px !important;
+  transition: background-color 0.3s, transform 0.3s;
+  border-radius: 50%;
+}
+
+/* Style for the active bullet */
+.swiper-pagination-bullet-active {
+  background-color: #fcbf1e !important;
+  transform: scale(1.2);
+}
+
+ul {
+  font-family: "Montserrat", sans-serif;
+}
